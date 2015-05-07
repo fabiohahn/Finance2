@@ -435,10 +435,7 @@
           ]
         },
         "Asp.NetCore,Version=v5.0": {
-          "dependencies": {
-            "Microsoft.Framework.DependencyInjection.Interfaces": "1.0.0-beta4",
-            "Microsoft.Framework.Logging.Interfaces": "1.0.0-beta4"
-          },
+          "dependencies": {},
           "frameworkAssemblies": [],
           "runtimeAssemblies": [
             "lib/portable-net451+win81+wpa81/Microsoft.Framework.Logging.dll"
@@ -1499,6 +1496,9 @@
         "xunit.core.2.1.0-beta2-build2981.nupkg",
         "xunit.core.2.1.0-beta2-build2981.nupkg.sha512",
         "xunit.core.nuspec",
+        "build/Xamarin.iOS/xunit.core.props",
+        "build/Xamarin.iOS/xunit.execution.iOS-Universal.dll",
+        "build/_Desktop/xunit.execution.desktop.dll",
         "build/monoandroid/xunit.core.props",
         "build/monoandroid/xunit.execution.MonoAndroid.dll",
         "build/monotouch/xunit.core.props",
@@ -1513,10 +1513,7 @@
         "build/win8/xunit.execution.win8.dll",
         "build/wp8/xunit.core.props",
         "build/wp8/xunit.core.targets",
-        "build/wp8/xunit.execution.wp8.dll",
-        "build/Xamarin.iOS/xunit.core.props",
-        "build/Xamarin.iOS/xunit.execution.iOS-Universal.dll",
-        "build/_Desktop/xunit.execution.desktop.dll"
+        "build/wp8/xunit.execution.wp8.dll"
       ]
     },
     "xunit.extensibility.core/2.1.0-beta2-build2981": {
@@ -1658,6 +1655,9 @@
         "xunit.extensibility.execution.2.1.0-beta2-build2981.nupkg",
         "xunit.extensibility.execution.2.1.0-beta2-build2981.nupkg.sha512",
         "xunit.extensibility.execution.nuspec",
+        "lib/Xamarin.iOS/xunit.execution.iOS-Universal.dll",
+        "lib/Xamarin.iOS/xunit.execution.iOS-Universal.pdb",
+        "lib/Xamarin.iOS/xunit.execution.iOS-Universal.xml",
         "lib/dnx451/xunit.execution.dnx.dll",
         "lib/dnx451/xunit.execution.dnx.pdb",
         "lib/dnx451/xunit.execution.dnx.xml",
@@ -1682,10 +1682,7 @@
         "lib/win8/xunit.execution.win8.xml",
         "lib/wp8/xunit.execution.wp8.dll",
         "lib/wp8/xunit.execution.wp8.pdb",
-        "lib/wp8/xunit.execution.wp8.xml",
-        "lib/Xamarin.iOS/xunit.execution.iOS-Universal.dll",
-        "lib/Xamarin.iOS/xunit.execution.iOS-Universal.pdb",
-        "lib/Xamarin.iOS/xunit.execution.iOS-Universal.xml"
+        "lib/wp8/xunit.execution.wp8.xml"
       ]
     },
     "xunit.runner.dnx/2.1.0-beta2-build79": {
@@ -1842,6 +1839,9 @@
         "xunit.runner.utility.2.1.0-beta2-build2981.nupkg",
         "xunit.runner.utility.2.1.0-beta2-build2981.nupkg.sha512",
         "xunit.runner.utility.nuspec",
+        "lib/Xamarin.iOS/xunit.runner.utility.iOS-Universal.dll",
+        "lib/Xamarin.iOS/xunit.runner.utility.iOS-Universal.pdb",
+        "lib/Xamarin.iOS/xunit.runner.utility.iOS-Universal.xml",
         "lib/dnx451/xunit.runner.utility.dnx.dll",
         "lib/dnx451/xunit.runner.utility.dnx.pdb",
         "lib/dnx451/xunit.runner.utility.dnx.xml",
@@ -1866,10 +1866,7 @@
         "lib/win8/xunit.runner.utility.win8.xml",
         "lib/wp8/xunit.runner.utility.wp8.dll",
         "lib/wp8/xunit.runner.utility.wp8.pdb",
-        "lib/wp8/xunit.runner.utility.wp8.xml",
-        "lib/Xamarin.iOS/xunit.runner.utility.iOS-Universal.dll",
-        "lib/Xamarin.iOS/xunit.runner.utility.iOS-Universal.pdb",
-        "lib/Xamarin.iOS/xunit.runner.utility.iOS-Universal.xml"
+        "lib/wp8/xunit.runner.utility.wp8.xml"
       ]
     }
   }
