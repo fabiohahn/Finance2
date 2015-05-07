@@ -1,0 +1,22 @@
+{
+    "version": "1.0.0-*",
+    "dependencies": {
+        "Finance": "1.0.0-*",
+        "FinanceApp": "1.0.0-*",
+        "xunit": "2.1.0-*",
+        "xunit.runner.dnx": "2.1.0-*",
+        "moq": { }
+    },
+
+    "frameworks": {
+        "aspnet50": { },
+        "aspnetcore50": { },
+        "dnx451": {
+            "dependencies": {}
+        }
+    }, 
+    
+    "commands": {
+        "test": "xunit.runner.dnx"
+    }
+}
