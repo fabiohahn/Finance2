@@ -47,8 +47,8 @@ namespace FinanceAppTest.Tests.Report
 
             var report = _balancePerAccountReport.GetReport(_property.Id, DateTime.Today);
 
-            Assert.AreEqual(12m, report.AccountBalance.First(x => x.AccountName == account1.Name).Ballance);
-            Assert.AreEqual(7m, report.AccountBalance.First(x => x.AccountName == account2.Name).Ballance);
+            Assert.Equal(12m, report.AccountBalance.First(x => x.AccountName == account1.Name).Ballance);
+            Assert.Equal(7m, report.AccountBalance.First(x => x.AccountName == account2.Name).Ballance);
         }
 
         [Fact]
@@ -71,7 +71,7 @@ namespace FinanceAppTest.Tests.Report
 
             var report = _balancePerAccountReport.GetReport(_property.Id, DateTime.Today);
 
-            Assert.AreEqual(9m, report.AccountBalance.First(x => x.AccountName == account.Name).Ballance);
+            Assert.Equal(9m, report.AccountBalance.First(x => x.AccountName == account.Name).Ballance);
         }
     }
 }

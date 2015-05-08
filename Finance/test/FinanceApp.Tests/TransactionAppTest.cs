@@ -7,7 +7,7 @@ using Finance;
 using Finance.IRepositories;
 using FinanceTest.Builder;
 using Moq;
-using XUnit;
+using Xunit;
 
 namespace FinanceAppTest.Tests
 {
@@ -62,8 +62,8 @@ namespace FinanceAppTest.Tests
         {
             var transaction = _transactionApp.Show(_property.Id, 0);
 
-            Assert.AreEqual(0, transaction.Id);
-            Assert.AreEqual(DateTime.Today.ToUsString(), transaction.Date);
+            Assert.Equal(0, transaction.Id);
+            Assert.Equal(DateTime.Today.ToUsString(), transaction.Date);
         }
 
         [Fact]

@@ -5,7 +5,8 @@
     "": [
       "Finance >= 1.0.0-*",
       "xunit >= 2.1.0-*",
-      "xunit.runner.dnx >= 2.1.0-*"
+      "xunit.runner.dnx >= 2.1.0-*",
+      "System.Threading.Tasks >= 4.0.10-beta-22816"
     ],
     "Asp.Net,Version=v5.0": [],
     "Asp.NetCore,Version=v5.0": [],
@@ -435,7 +436,10 @@
           ]
         },
         "Asp.NetCore,Version=v5.0": {
-          "dependencies": {},
+          "dependencies": {
+            "Microsoft.Framework.DependencyInjection.Interfaces": "1.0.0-beta4",
+            "Microsoft.Framework.Logging.Interfaces": "1.0.0-beta4"
+          },
           "frameworkAssemblies": [],
           "runtimeAssemblies": [
             "lib/portable-net451+win81+wpa81/Microsoft.Framework.Logging.dll"
@@ -1297,6 +1301,76 @@
         "lib/portable-wpa81+wp80+win80+net45+aspnetcore50/System.Runtime.dll"
       ]
     },
+    "System.Threading.Tasks/4.0.10-beta-22816": {
+      "serviceable": false,
+      "sha": "KhcVrI2JzX1oHigWTbf4F/2uhPSkhjquLPYbBVCLe9HGxLDJk2WLgmTbJk7fIus6xWWnWJmhOp0rHERU9M2SQw==",
+      "frameworks": {
+        "Asp.Net,Version=v5.0": {
+          "dependencies": {
+            "System.Runtime": "4.0.20-beta-22816"
+          },
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System.Core"
+          ],
+          "runtimeAssemblies": [
+            "lib/net45/System.Threading.Tasks.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/System.Threading.Tasks.dll"
+          ]
+        },
+        "Asp.NetCore,Version=v5.0": {
+          "dependencies": {
+            "System.Runtime": "4.0.20-beta-22816"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/aspnetcore50/System.Threading.Tasks.dll"
+          ],
+          "compileAssemblies": [
+            "lib/contract/System.Threading.Tasks.dll"
+          ]
+        },
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "System.Runtime": "4.0.20-beta-22816"
+          },
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System.Core"
+          ],
+          "runtimeAssemblies": [
+            "lib/net45/System.Threading.Tasks.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/System.Threading.Tasks.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "System.Runtime": "4.0.20-beta-22816"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/aspnetcore50/System.Threading.Tasks.dll"
+          ],
+          "compileAssemblies": [
+            "lib/contract/System.Threading.Tasks.dll"
+          ]
+        }
+      },
+      "files": [
+        "License.rtf",
+        "System.Threading.Tasks.4.0.10-beta-22816.nupkg",
+        "System.Threading.Tasks.4.0.10-beta-22816.nupkg.sha512",
+        "System.Threading.Tasks.nuspec",
+        "lib/aspnetcore50/System.Threading.Tasks.dll",
+        "lib/contract/System.Threading.Tasks.dll",
+        "lib/net45/System.Threading.Tasks.dll",
+        "lib/portable-wpa81+wp80+win80+net45+aspnetcore50/System.Threading.Tasks.dll"
+      ]
+    },
     "xunit/2.1.0-beta2-build2981": {
       "serviceable": false,
       "sha": "qTzY4x9uJ+CXDpS7/mm+rmz4YvpwY4IwTgRs6bk9R71G2yXneuuSJ+XaZ5V8ytGHgXeIWfwp3h4sg8uRi2GNxw==",
@@ -1496,9 +1570,6 @@
         "xunit.core.2.1.0-beta2-build2981.nupkg",
         "xunit.core.2.1.0-beta2-build2981.nupkg.sha512",
         "xunit.core.nuspec",
-        "build/Xamarin.iOS/xunit.core.props",
-        "build/Xamarin.iOS/xunit.execution.iOS-Universal.dll",
-        "build/_Desktop/xunit.execution.desktop.dll",
         "build/monoandroid/xunit.core.props",
         "build/monoandroid/xunit.execution.MonoAndroid.dll",
         "build/monotouch/xunit.core.props",
@@ -1513,7 +1584,10 @@
         "build/win8/xunit.execution.win8.dll",
         "build/wp8/xunit.core.props",
         "build/wp8/xunit.core.targets",
-        "build/wp8/xunit.execution.wp8.dll"
+        "build/wp8/xunit.execution.wp8.dll",
+        "build/Xamarin.iOS/xunit.core.props",
+        "build/Xamarin.iOS/xunit.execution.iOS-Universal.dll",
+        "build/_Desktop/xunit.execution.desktop.dll"
       ]
     },
     "xunit.extensibility.core/2.1.0-beta2-build2981": {
@@ -1655,9 +1729,6 @@
         "xunit.extensibility.execution.2.1.0-beta2-build2981.nupkg",
         "xunit.extensibility.execution.2.1.0-beta2-build2981.nupkg.sha512",
         "xunit.extensibility.execution.nuspec",
-        "lib/Xamarin.iOS/xunit.execution.iOS-Universal.dll",
-        "lib/Xamarin.iOS/xunit.execution.iOS-Universal.pdb",
-        "lib/Xamarin.iOS/xunit.execution.iOS-Universal.xml",
         "lib/dnx451/xunit.execution.dnx.dll",
         "lib/dnx451/xunit.execution.dnx.pdb",
         "lib/dnx451/xunit.execution.dnx.xml",
@@ -1682,7 +1753,10 @@
         "lib/win8/xunit.execution.win8.xml",
         "lib/wp8/xunit.execution.wp8.dll",
         "lib/wp8/xunit.execution.wp8.pdb",
-        "lib/wp8/xunit.execution.wp8.xml"
+        "lib/wp8/xunit.execution.wp8.xml",
+        "lib/Xamarin.iOS/xunit.execution.iOS-Universal.dll",
+        "lib/Xamarin.iOS/xunit.execution.iOS-Universal.pdb",
+        "lib/Xamarin.iOS/xunit.execution.iOS-Universal.xml"
       ]
     },
     "xunit.runner.dnx/2.1.0-beta2-build79": {
@@ -1839,9 +1913,6 @@
         "xunit.runner.utility.2.1.0-beta2-build2981.nupkg",
         "xunit.runner.utility.2.1.0-beta2-build2981.nupkg.sha512",
         "xunit.runner.utility.nuspec",
-        "lib/Xamarin.iOS/xunit.runner.utility.iOS-Universal.dll",
-        "lib/Xamarin.iOS/xunit.runner.utility.iOS-Universal.pdb",
-        "lib/Xamarin.iOS/xunit.runner.utility.iOS-Universal.xml",
         "lib/dnx451/xunit.runner.utility.dnx.dll",
         "lib/dnx451/xunit.runner.utility.dnx.pdb",
         "lib/dnx451/xunit.runner.utility.dnx.xml",
@@ -1866,7 +1937,10 @@
         "lib/win8/xunit.runner.utility.win8.xml",
         "lib/wp8/xunit.runner.utility.wp8.dll",
         "lib/wp8/xunit.runner.utility.wp8.pdb",
-        "lib/wp8/xunit.runner.utility.wp8.xml"
+        "lib/wp8/xunit.runner.utility.wp8.xml",
+        "lib/Xamarin.iOS/xunit.runner.utility.iOS-Universal.dll",
+        "lib/Xamarin.iOS/xunit.runner.utility.iOS-Universal.pdb",
+        "lib/Xamarin.iOS/xunit.runner.utility.iOS-Universal.xml"
       ]
     }
   }

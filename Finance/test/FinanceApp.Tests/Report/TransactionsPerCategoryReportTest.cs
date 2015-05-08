@@ -19,7 +19,7 @@ namespace FinanceAppTest.Tests.Report
         private readonly DateTime _finalDate = DateTime.Today;
         private const int PropertyId = 1;
 
-        public TransactionPerCategoryReportTest()
+        public TransactionsPerCategoryReportTest()
         {
             _categoryA = CategoryBuilder.ACategory().WithTransactiontype(TransactionType.Credit).Build();
             _transactionRepository = new Mock<ITransactionRepository>();
@@ -39,7 +39,7 @@ namespace FinanceAppTest.Tests.Report
             
             var report = _balanceReport.GetReport(PropertyId, _initialDate, _finalDate);
 
-            Assert.AreEqual(160, report.Credits.FirstOrDefault(x => x.Category == _categoryA.Name).Values.FirstOrDefault().Value);
+            Assert.Equal(160, report.Credits.FirstOrDefault(x => x.Category == _categoryA.Name).Values.FirstOrDefault().Value);
         }
 
         [Fact]
@@ -57,8 +57,8 @@ namespace FinanceAppTest.Tests.Report
 
             var report = _balanceReport.GetReport(PropertyId, lastMonth, thisMonth);
 
-            Assert.AreEqual(100, report.Credits.FirstOrDefault(x => x.Category == _categoryA.Name).Values.FirstOrDefault(x => x.Date.Month == thisMonth.Month).Value);
-            Assert.AreEqual(60, report.Credits.FirstOrDefault(x => x.Category == _categoryA.Name).Values.FirstOrDefault(x => x.Date.Month == lastMonth.Month).Value);
+            Assert.Equal(100, report.Credits.FirstOrDefault(x => x.Category == _categoryA.Name).Values.FirstOrDefault(x => x.Date.Month == thisMonth.Month).Value);
+            Assert.Equal(60, report.Credits.FirstOrDefault(x => x.Category == _categoryA.Name).Values.FirstOrDefault(x => x.Date.Month == lastMonth.Month).Value);
         }
 
         [Fact]
@@ -75,8 +75,8 @@ namespace FinanceAppTest.Tests.Report
 
             var report = _balanceReport.GetReport(PropertyId, _initialDate, _finalDate);
 
-            Assert.AreEqual(100, report.Credits.FirstOrDefault(x => x.Category == _categoryA.Name).Values.FirstOrDefault().Value);
-            Assert.AreEqual(60, report.Credits.FirstOrDefault(x => x.Category == categoryB.Name).Values.FirstOrDefault().Value);
+            Assert.Equal(100, report.Credits.FirstOrDefault(x => x.Category == _categoryA.Name).Values.FirstOrDefault().Value);
+            Assert.Equal(60, report.Credits.FirstOrDefault(x => x.Category == categoryB.Name).Values.FirstOrDefault().Value);
         }
         
         [Fact]
@@ -96,9 +96,9 @@ namespace FinanceAppTest.Tests.Report
 
             var report = _balanceReport.GetReport(PropertyId, _initialDate, _finalDate);
 
-            Assert.AreEqual(creditCategory.Name, report.Credits.ElementAt(0).Category);
-            Assert.AreEqual(creditCategory2.Name, report.Credits.ElementAt(1).Category);
-            Assert.AreEqual(debitCategory.Name, report.Debits.ElementAt(0).Category);
+            Assert.Equal(creditCategory.Name, report.Credits.ElementAt(0).Category);
+            Assert.Equal(creditCategory2.Name, report.Credits.ElementAt(1).Category);
+            Assert.Equal(debitCategory.Name, report.Debits.ElementAt(0).Category);
         }
 
         [Fact]
@@ -115,7 +115,7 @@ namespace FinanceAppTest.Tests.Report
 
             var report = _balanceReport.GetReport(PropertyId, _initialDate, _finalDate);
 
-            Assert.AreEqual(160, report.CreditsSum.Values.FirstOrDefault(x => x.Date == _initialDate).Value);
+            Assert.Equal(160, report.CreditsSum.Values.FirstOrDefault(x => x.Date == _initialDate).Value);
         }
 
         [Fact]
@@ -135,8 +135,8 @@ namespace FinanceAppTest.Tests.Report
 
             var report = _balanceReport.GetReport(PropertyId, lastMonth, _finalDate);
             
-            Assert.AreEqual(340, report.CreditsSum.Values.FirstOrDefault(x => x.Date == lastMonth).Value);
-            Assert.AreEqual(160, report.CreditsSum.Values.FirstOrDefault(x => x.Date == _finalDate).Value);
+            Assert.Equal(340, report.CreditsSum.Values.FirstOrDefault(x => x.Date == lastMonth).Value);
+            Assert.Equal(160, report.CreditsSum.Values.FirstOrDefault(x => x.Date == _finalDate).Value);
         }
 
         [Fact]
@@ -153,7 +153,7 @@ namespace FinanceAppTest.Tests.Report
 
             var report = _balanceReport.GetReport(PropertyId, _initialDate, _finalDate);
 
-            Assert.AreEqual(40, report.Balance.Values.FirstOrDefault(x => x.Date == _initialDate).Value);
+            Assert.Equal(40, report.Balance.Values.FirstOrDefault(x => x.Date == _initialDate).Value);
         }
     }
 }

@@ -1,16 +1,16 @@
-﻿// using System.ComponentModel;
+﻿ using System.ComponentModel;
 
 namespace Finance
 {
     public enum TransactionType
     {
-//         [Description("Débito")]
+        [Description("Débito")]
         Debit,
-//         [Description("Crédito")]
+        [Description("Crédito")]
         Credit,
-//         [Description("Transferência de Crédito")]
+        [Description("Transferência de Crédito")]
         CreditTransfer,
-//         [Description("Transferência de Débito")]
+        [Description("Transferência de Débito")]
         DebitTransfer
     }
 }

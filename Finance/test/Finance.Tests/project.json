@@ -3,7 +3,8 @@
     "dependencies": {
         "Finance": "1.0.0-*",
         "xunit": "2.1.0-*",
-        "xunit.runner.dnx": "2.1.0-*"
+        "xunit.runner.dnx": "2.1.0-*",
+        "System.Threading.Tasks": "4.0.10-beta-22816"
     },
 
     "frameworks": {

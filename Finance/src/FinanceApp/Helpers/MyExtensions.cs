@@ -26,12 +26,12 @@ namespace App.Helpers
             if (str.Contains("-"))
             {
                 dateparts = str.Split('-');
-                return new DateTime(Convert.ToInt32(dateparts[0]), Convert.ToInt32(dateparts[1]), Convert.ToInt32(dateparts[2]));
+                return new DateTime(int.Parse(dateparts[0]), int.Parse(dateparts[1]), int.Parse(dateparts[2]));
             }
 
             dateparts = str.Split('/');
-            return new DateTime(Convert.ToInt32(dateparts[2]), Convert.ToInt32(dateparts[1]),
-                Convert.ToInt32(dateparts[0]));
+            return new DateTime(int.Parse(dateparts[2]), int.Parse(dateparts[1]),
+                int.Parse(dateparts[0]));
         }
 
         public static DateTime GetFirstFromSixMonthAgo(this DateTime? date)
@@ -47,7 +47,7 @@ namespace App.Helpers
 
         public static string ToCurrency(this decimal value)
         {
-            return value == 0 ? "" : Math.Round(value, 2).ToString(CultureInfo.InvariantCulture);
+            return value == 0 ? "" : (value).ToString(CultureInfo.InvariantCulture);
         }
     }
 }
