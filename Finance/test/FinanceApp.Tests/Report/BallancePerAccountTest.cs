@@ -10,7 +10,7 @@ using Xunit;
 
 namespace FinanceAppTest.Tests.Report
 {
-    class BallancePerAccountTest
+    public class BallancePerAccountTest
     {
         private Property _property;
         private Mock<ITransactionRepository> _transactionRepository;
