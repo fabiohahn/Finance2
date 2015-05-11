@@ -13,7 +13,8 @@ namespace FinanceMvc.Repositories.Memory
 
         public virtual void Add(TObject t)
         {
-            Data.Add(Data.Count + 1, t);
+            t.Id = Data.Count + 1;
+            Data.Add(t.Id, t);            
         }
         
         public virtual void Update(TObject t, int key)

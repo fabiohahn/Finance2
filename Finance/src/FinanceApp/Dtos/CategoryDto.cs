@@ -15,8 +15,7 @@ namespace App.Dtos
             Id = category.Id;
             Name = category.Name;
             TransactionType = category.TransactionType;
-            TransactionTypeDescription = "";
-            //category.TransactionType.DescriptionAttr();
+            TransactionTypeDescription = category.TransactionType.DescriptionAttr();
         }
     }
 }

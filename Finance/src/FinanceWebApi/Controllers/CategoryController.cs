@@ -18,7 +18,7 @@ namespace FinanceWebApi.Controllers
             var categoryRepository = RepositoryFactory.GetCategoryRepository();
             var propertyRepository = RepositoryFactory.GetPropertyRepository();
             var transactionRepository = RepositoryFactory.GetTransactionRepository();
-
+            
             _categoryApp = new CategoryApp(categoryRepository, propertyRepository, transactionRepository);
         }
 

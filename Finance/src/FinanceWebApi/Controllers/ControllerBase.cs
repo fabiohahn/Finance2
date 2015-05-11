@@ -10,14 +10,12 @@ namespace FinanceWebApi.Controllers
 {
     public class ControllerBase : Controller
     {
-        protected readonly IRepositoryFactory RepositoryFactory;
-        protected readonly int SeletedPropertyId = 0;
+        protected static readonly IRepositoryFactory RepositoryFactory = new MemoryRepositoryFactory();
+        protected readonly int SeletedPropertyId = 1;
 
         public ControllerBase()
         {
-            RepositoryFactory = new MemoryRepositoryFactory();
-            DataBaseFiller.FillSampleData(RepositoryFactory);
-            
+            DataBaseFiller.FillSampleData(RepositoryFactory);            
             SeletedPropertyId = 1;            
         }
     }
