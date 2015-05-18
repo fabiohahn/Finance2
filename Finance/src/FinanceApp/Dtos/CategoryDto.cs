@@ -10,6 +10,8 @@ namespace App.Dtos
         public TransactionType TransactionType { get; set; }
         public string TransactionTypeDescription { get; set; }
 
+        public CategoryDto(){}
+
         public CategoryDto(Category category)
         {
             Id = category.Id;
