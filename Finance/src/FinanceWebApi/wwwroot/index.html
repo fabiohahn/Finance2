@@ -1,6 +1,30 @@
-<html>
-	<head>
-		<title>Finance</title>
-	</head>
-	<body>hello world</body>	
+<!DOCTYPE html>
+<html ng-app="finance">
+  <meta charset="utf-8" />
+  <head>
+    <script src="/lib/angular.min.js"></script>
+    <script src="/src/app.js"></script>
+    <script src="/src/services/transactionStore.js"></script>
+    <script src="/src/controllers/menuController.js"></script>
+    <script src="/src/controllers/transactionController.js"></script>
+  </head>
+  <body ng-controller="MenuController as menu">
+    {{menu.message}}
+    <div ng-controller="TransactionController as transaction">
+      <form>
+        <input type="text" ng-model="transaction.newItem.description" />
+        <button ng-click="transaction.addItem(transaction.newItem)">Salvar</button>
+      </form>
+      <table>
+        <tr>
+          <th>Descrição</th>
+          <th>Valor</th>
+        </tr>
+        <tr ng-repeat="item in transaction.itens">
+          <td>{{item.Date}}</td>
+          <td>{{item.Value}}</td>
+        </tr>
+      </table>
+    </div>
+  </body>
 </html>
