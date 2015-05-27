@@ -34,5 +34,15 @@ namespace FinanceAppTest.Tests
 
             _userRepository.Verify(x => x.Update(It.Is<User>(y => y.FavoriteProperty.Id == newPropertyId), userId));
         }
+        
+        [Fact]
+        public void ShouldValidateUser(){
+            var username = "username";
+            var password = "password";
+            var user = UserBuilder.AnUser().WithUsername(username).WithPassword(password).Build()
+            _userRepository.Setup(x => x.Get(username, password)).Returns(user);            
+            
+            Assert.Equal(1, _userApp.GetPropertyOfUser(username, password));
+        }
     }
 }

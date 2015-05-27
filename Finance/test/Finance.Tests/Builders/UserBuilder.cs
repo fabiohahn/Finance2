@@ -26,6 +26,17 @@ namespace FinanceTest.Builder
             _id = id;
             return this;
         }
+        
+        public UserBuilder WithUsername(string username){
+            _username = username;
+            return this;
+        }
+        
+        public UserBuilder WithPassword(string password)
+        {
+            _password = password;
+            return this;
+        }
 
         public User Build()
         {
