@@ -1,7 +1,4 @@
 using Finance.IRepositories;
-using System.Security.Cryptography;
-using System.Text;
-using System;
 
 namespace App
 {
@@ -28,18 +25,12 @@ namespace App
         
         public int GetPropertyOfUser(string username, string password)
         {
-            var hashedPassword = HashPassword(password);
+            var hashedPassword = Hash.GetHash(password);
             var user = _userRepository.Get(username, hashedPassword);
             
             if(user != null)
                 return user.FavoriteProperty.Id;
             return 0;
-        }
-        
-        private string HashPassword(string password){
-            var sha1 = new SHA1Managed();
-         
-            return Convert.ToBase64String(sha1.ComputeHash(Encoding.Default.GetBytes(password)));   
         }
     }
 }

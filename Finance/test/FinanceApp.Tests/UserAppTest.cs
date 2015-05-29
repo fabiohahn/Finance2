@@ -39,8 +39,10 @@ namespace FinanceAppTest.Tests
         public void ShouldValidateUser(){
             var username = "username";
             var password = "password";
-            var user = UserBuilder.AnUser().WithUsername(username).WithPassword(password).Build()
-            _userRepository.Setup(x => x.Get(username, password)).Returns(user);            
+            var hashedPassword = Hash.GetHash(password);
+            var property = PropertyBuilder.AProperty().WithId(1).Build();
+            var user = UserBuilder.AnUser().WithUsername(username).WithPassword(password).WithProperty(property).Build();
+            _userRepository.Setup(x => x.Get(username, hashedPassword)).Returns(user);            
             
             Assert.Equal(1, _userApp.GetPropertyOfUser(username, password));
         }
